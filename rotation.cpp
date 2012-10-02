@@ -1,5 +1,7 @@
 #include "rotation.h"
 
+namespace math {
+
 Matrix4f rotateX(float a)
 {
     float ca = cosf(a);
@@ -54,3 +56,5 @@ Matrix3f rotate2D(float a)
 
     return m;
 }
+
+}; // namespace math

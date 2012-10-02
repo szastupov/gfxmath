@@ -1,6 +1,8 @@
 #include <iostream>
 #include "vec.h"
 
+namespace math {
+
 std::ostream& operator<<(std::ostream &out, const Ray &ray)
 {
     out << "Ray {"
@@ -36,3 +38,5 @@ std::ostream& operator<< <2, float>(std::ostream &out, const vec<2, float> &v);
 
 template
 std::ostream& operator<< <2, int>(std::ostream &out, const vec<2, int> &v);
+
+}; // namespace math

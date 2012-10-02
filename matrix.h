@@ -3,6 +3,8 @@
 
 #include "vec.h"
 
+namespace math {
+
 template <size_t N, typename T>
 class Matrix {
 public:
@@ -107,5 +109,7 @@ inline Matrix4f translate(const vec3f &s)
 {
     return translate(s[0], s[1], s[2]);
 }
+
+}; // namespace math
 
 #endif

@@ -4,6 +4,8 @@
 
 #include "matrix.h"
 
+namespace math {
+
 template <size_t N, typename T>
 Matrix<N, T>::Matrix(const T *data)
 {
@@ -236,3 +238,5 @@ Matrix3f Matrix3f::inverseTransposed() const
     mat.transpose();
     return mat;
 }
+
+}; // namespace math

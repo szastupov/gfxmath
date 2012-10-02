@@ -1,6 +1,8 @@
 #include <iostream>
 #include "quaternion.h"
 
+namespace math {
+
 std::ostream &operator<<(std::ostream &out, const Quaternion &q)
 {
     out << "["
@@ -104,3 +106,5 @@ void Quaternion::loadIdentity()
     m_v.assign(0.0f);
     m_w = 1.0f;
 }
+
+}; // namespace math

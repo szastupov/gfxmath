@@ -8,6 +8,8 @@
 #include <cstring>
 #include <iosfwd>
 
+namespace math {
+
 template <size_t N, typename T>
 class vec {
 public:
@@ -214,21 +216,17 @@ public:
         return !(*this == b);
     }
 
-    bool operator <= (const vec &b) const
-    {
-        return vec4_leq(m_data.v, b.m_data.v);
-    }
-
-    bool operator >= (const vec &b) const
-    {
-        return vec4_geq(m_data.v, b.m_data.v);
-    }
-
     template<class Archive>
     void serialize(Archive & ar, const unsigned int version)
     {
         for (size_t i = 0; i < N; i++)
             ar & m_data[i];
+    }
+
+    void clamp(vec a, vec b)
+    {
+        for (size_t i = 0; i < N; i++)
+            m_data[i] = math::clamp(m_data[i], a[i], b[i]);
     }
 
 private:
@@ -283,5 +281,7 @@ struct Ray {
 };
 
 std::ostream& operator<<(std::ostream &out, const Ray &ray);
+
+}; // namespace math
 
 #endif

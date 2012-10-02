@@ -4,6 +4,8 @@
 #include "matrix.h"
 #include "quaternion.h"
 
+namespace math {
+
 Matrix4f rotateX(float angle);
 Matrix4f rotateY(float angle);
 Matrix4f rotateZ(float angle);
@@ -19,5 +21,7 @@ inline Matrix4f rotateTo(const vec3f &dir)
 {
     return Quaternion::fromDirection(dir).toMatrix();
 }
+
+}; // namespace math
 
 #endif

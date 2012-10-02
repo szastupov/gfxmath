@@ -2,6 +2,8 @@
 #define PLANE_H
 #include "vec.h"
 
+namespace math {
+
 class Plane {
 public:
     Plane()
@@ -35,5 +37,7 @@ private:
     vec3f m_n;                  // normal
     vec3f m_p0;
 };
+
+}; // namespace math
 
 #endif

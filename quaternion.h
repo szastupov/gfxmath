@@ -4,6 +4,8 @@
 #include "vec.h"
 #include "matrix.h"
 
+namespace math {
+
 struct Quaternion {
     vec3f m_v;
     float m_w;
@@ -86,5 +88,7 @@ struct Quaternion {
 };
 
 std::ostream &operator<<(std::ostream &out, const Quaternion &q);
+
+}; // namespace math
 
 #endif

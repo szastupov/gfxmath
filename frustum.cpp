@@ -1,5 +1,7 @@
 #include "frustum.h"
 
+namespace math {
+
 Frustum::Frustum()
     : m_up(0.0f, 1.0f, 0.0f)
     , m_dir(0.0f, 0.0f, -1.0f)
@@ -94,3 +96,5 @@ int Frustum::containsSphere(const vec3f &c, float r) const
     }
     return INSIDE;
 }
+
+}; // namespace mats

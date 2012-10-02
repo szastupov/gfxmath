@@ -2,6 +2,8 @@
 #define RECT_H
 #include "vec.h"
 
+namespace math {
+
 struct Rect {
     float x, y, w, h;
 
@@ -83,5 +85,7 @@ struct Rect {
         ar & h;
     }
 };
+
+}; // namespace math
 
 #endif

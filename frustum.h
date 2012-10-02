@@ -4,6 +4,8 @@
 #include "matrix.h"
 #include "quaternion.h"
 
+namespace math {
+
 typedef enum { OUTSIDE = 0, INSIDE = 1, INTERSECT = 2 } intersection_t;
 
 class Frustum {
@@ -26,5 +28,7 @@ private:
 
     void reset();
 };
+
+}; // namespace math
 
 #endif
