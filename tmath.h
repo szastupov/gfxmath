@@ -26,6 +26,12 @@ inline T clamp(T x, T a, T b)
     return x < a ? a : (x > b ? b : x);
 }
 
+template <typename T>
+inline T sgn(T val)
+{
+    return (val > 0) - (val < 0);
+}
+
 }; // namespace math
 
 #endif

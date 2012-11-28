@@ -71,9 +71,10 @@ public:
         memcpy(m_data, src, sizeof(m_data));
     }
 
-    template <typename U>
-    explicit vec(const vec<N, U> &src)
+    template <size_t Z, typename U>
+    explicit vec(const vec<Z, U> &src)
     {
+        assert(Z >= N);
         for (size_t i = 0; i < N; i++)
             m_data[i] = (T)src[i];
     }
@@ -240,6 +241,7 @@ typedef vec<3, float> vec3f;
 typedef vec<4, float> vec4f;
 typedef vec<2, int> vec2i;
 typedef vec<2, float> vec2f;
+typedef vec<2, double> vec2d;
 
 inline vec3f vec3(const vec4f &src)
 {
